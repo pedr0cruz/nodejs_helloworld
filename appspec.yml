@@ -1,0 +1,27 @@
+version: 0.0
+os: linux
+files:
+  - source: /express.js
+    destination: /home/app/serverExpress
+permissions:
+  - object: /
+    pattern: "**"
+    owner: app
+    group: app
+hooks:
+  ApplicationStop:
+    - location: deploy/ApplicationStop.sh
+      timeout: 60
+      runas: app
+  BeforeInstall:
+    - location: deploy/BeforeInstall.sh
+      timeout: 300
+      runas: app
+  AfterInstall:
+    - location: deploy/AfterInstall.sh
+      timeout: 300
+      runas: app
+  ApplicationStart:
+    - location: deploy/ApplicationStart.sh
+      timeout: 60
+      runas: app
