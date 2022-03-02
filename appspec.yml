@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /express.js
+  - source: /
     destination: /home/app/serverExpress
 permissions:
   - object: /
