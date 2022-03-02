@@ -7,7 +7,6 @@ permissions:
   - object: /
     pattern: "**"
     owner: ec2-user
-    group: ''
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
