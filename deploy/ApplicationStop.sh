@@ -1,4 +1,4 @@
 #!/bin/bash
 # Delete doorSensor service
 
-sudo forever-service delete serverExpress
+forever-service delete serverExpress
