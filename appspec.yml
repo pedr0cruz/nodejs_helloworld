@@ -6,22 +6,22 @@ files:
 permissions:
   - object: /
     pattern: "**"
-    owner: app
-    group: app
+    owner: ec2-user
+    group: ''
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
       timeout: 60
-      runas: app
+      runas: ec2-user
   BeforeInstall:
     - location: deploy/BeforeInstall.sh
       timeout: 300
-      runas: app
+      runas: ec2-user
   AfterInstall:
     - location: deploy/AfterInstall.sh
       timeout: 300
-      runas: app
+      runas: ec2-user
   ApplicationStart:
     - location: deploy/ApplicationStart.sh
       timeout: 60
-      runas: app
+      runas: ec2-user
