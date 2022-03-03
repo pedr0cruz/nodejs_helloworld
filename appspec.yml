@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: /app
+  - source: app/
     destination: /home/app/serverExpress
 permissions:
-  - object: /app
+  - object: app/
     pattern: "**"
     owner: ec2-user
 hooks:
