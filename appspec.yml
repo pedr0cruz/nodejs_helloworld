@@ -4,9 +4,10 @@ files:
   - source: app/
     destination: /home/app/serverExpress
 permissions:
-  - object: app/
+  - object: /home/app/serverExpress
     pattern: "**"
     owner: ec2-user
+    mode: 777
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
