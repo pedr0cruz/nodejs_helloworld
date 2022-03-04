@@ -6,18 +6,23 @@ files:
 permissions:
   - object: /home/app/serverExpress
     pattern: "**"
+    owner: ec2-user
     mode: 777
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
       timeout: 60
+      runas: ec2-user
   BeforeInstall:
     - location: deploy/BeforeInstall.sh
       timeout: 300
+      runas: ec2-user
   AfterInstall:
     - location: deploy/AfterInstall.sh
       timeout: 300
+      runas: ec2-user
   ApplicationStart:
     - location: deploy/ApplicationStart.sh
       timeout: 60
+      runas: ec2-user
 
