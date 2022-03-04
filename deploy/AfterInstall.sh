@@ -3,5 +3,5 @@
 ##### Install Modules
 
 cd /home/app/serverExpress/
-npm install
+sudo npm install
 
