@@ -1,28 +1,29 @@
 version: 0.0
 os: linux
 files:
-  - source: app/
+  - source: /app/
     destination: /home/app/serverExpress
 permissions:
   - object: /home/app/serverExpress
     pattern: "**"
-    owner: ec2-user
+    owner: app
+    group: wheel
     mode: 777
 hooks:
   ApplicationStop:
     - location: deploy/ApplicationStop.sh
       timeout: 60
-      runas: ec2-user
+      runas: app
   BeforeInstall:
     - location: deploy/BeforeInstall.sh
       timeout: 300
-      runas: ec2-user
+      runas: app
   AfterInstall:
     - location: deploy/AfterInstall.sh
       timeout: 300
-      runas: ec2-user
+      runas: app
   ApplicationStart:
     - location: deploy/ApplicationStart.sh
       timeout: 60
-      runas: ec2-user
+      runas: app
 
