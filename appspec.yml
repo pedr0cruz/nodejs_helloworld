@@ -4,7 +4,7 @@ files:
   - source: /app/
     destination: /home/app/HelloWorld
     overwrite: true
-  permissions:
+permissions:
   - object: /home/app/HelloWorld
     pattern: "**"
     owner: app
