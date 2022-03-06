@@ -4,6 +4,10 @@ files:
   - source: /app/
     destination: /home/app/HelloWorld
     overwrite: true
+  permissions:
+  - object: /home/app/HelloWorld
+    pattern: "**"
+    owner: app
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstall.sh
