@@ -5,7 +5,7 @@ files:
     destination: /home/app/HelloWorld
     overwrite: true
 permissions:
-  - object: /home/app/HelloWorld
+  - object: /
     pattern: "**"
     owner: app
 hooks:
